@@ -97,4 +97,11 @@ public class ResourceAllocator {
         }
         System.out.println("Finished " + outputFile);
     }
+
+    class RoleIndexComparator implements Comparator<Role> {
+        @Override
+        public int compare(Role roleA, Role roleB) {
+            return  roleA.index - roleB.index;
+        }
+    };
 }

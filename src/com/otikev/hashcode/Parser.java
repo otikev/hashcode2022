@@ -137,4 +137,26 @@ public class Parser {
         }
         return project;
     }
+
+    class SkillGroupComparator implements Comparator<SkillGroup> {
+
+        @Override
+        public int compare(SkillGroup skillGroupA, SkillGroup skillGroupB) {
+            return skillGroupB.contributors.size() - skillGroupA.contributors.size();
+        }
+    }
+
+    class SkillLevelComparator implements Comparator<Contributor> {
+
+        private String skill;
+
+        public SkillLevelComparator(String skill) {
+            this.skill = skill;
+        }
+
+        @Override
+        public int compare(Contributor contributorA, Contributor contributorB) {
+            return  contributorB.getSkillLevel(skill) - contributorA.getSkillLevel(skill);
+        }
+    }
 }
