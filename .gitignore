@@ -1,0 +1,5 @@
+*.out.txt
+src.zip
+.idea/
+*.iml
+out/
