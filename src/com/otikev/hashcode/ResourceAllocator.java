@@ -1,4 +1,4 @@
-package com.otikev;
+package com.otikev.hashcode;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -45,41 +45,6 @@ public class ResourceAllocator {
         mainBuilder.append(projectsCount);
         mainBuilder.append(allocationsBuilder);
         printOutput(outputFile);
-    }
-
-
-
-    private boolean hasAllSkills(Map<String, Integer> potentialContributorsCount, Project project) {
-        for (Role role : project.roles) {
-            if (potentialContributorsCount.get(role.name) < 1) {
-                //Missing skill
-                return false;
-            }
-        }
-        return true;
-    }
-
-    private Map<String, Integer> potentialContributorsCount(Project project) {
-        Map<String, Integer> potentialContributors = new HashMap<>();
-
-        for (Role role : project.roles) {
-            if(!role.filled()){
-                int contributorCount = 0;
-                for (Contributor contributor : parser.contributors) {
-                    if(!project.isAssignedThisContributor(contributor)){
-                        if (contributor.skills.containsKey(role.name) && contributor.skills.get(role.name) >= role.level-1) {
-                            contributorCount++;
-                        }else if(role.level == 1){
-                            //Any one can be mentored for this role since it requires level 1
-                            contributorCount++;
-                        }
-                    }
-                }
-                potentialContributors.put(role.name, contributorCount);
-            }
-        }
-
-        return potentialContributors;
     }
 
     private Contributor getBestAvailableContributorForSkill(Role role, Project project) {

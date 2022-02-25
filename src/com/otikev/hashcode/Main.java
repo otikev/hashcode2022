@@ -1,4 +1,4 @@
-package com.otikev;
+package com.otikev.hashcode;
 
 import java.io.IOException;
 import java.nio.file.Files;

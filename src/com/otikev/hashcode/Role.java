@@ -1,4 +1,4 @@
-package com.otikev;
+package com.otikev.hashcode;
 
 /**
  * Created by kevin on 25-Feb-2022

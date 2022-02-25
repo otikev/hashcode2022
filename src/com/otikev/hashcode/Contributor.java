@@ -1,4 +1,4 @@
-package com.otikev;
+package com.otikev.hashcode;
 
 import java.util.HashMap;
 import java.util.Map;
