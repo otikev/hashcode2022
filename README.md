@@ -1,8 +1,22 @@
-# Qualification Round - Hash Code 2022
+# [Qualification Round - Hash Code 2022](https://codingcompetitions.withgoogle.com/hashcode/round/00000000008caae7/000000000098afc8)
 
-#Mentorship and Teamwork
+# Scores
+| Input                  | Score   |
+|------------------------|---------|
+| A-An Example           | 30      |
+| B - Better start small | 310676  |
+| C - Collaboration      | 2686    |
+| D - Dense schedule     | 50530   |
+| E - Exceptional skills | 1223438 |
+| F - Find great mentors | WA      |
+| Total                  | 1542360 |
 
-##Introduction
+
+
+# Problem Statement
+## Mentorship and Teamwork
+
+## Introduction
 
 Work is so much more fun when we are part of a team! By combining our different skills, we can be more creative, efficient and productive. And more importantly, when working together we share... not only pizzas, but also knowledge. We can learn from each other, improve our own skills and gain experience.
 
@@ -10,11 +24,11 @@ Teamwork is one of the main ingredients of Hash Code, especially in this challen
 
 So, are you up for the challenge?
 
-##Summary
+##S ummary
 You are given a list of contributors, who have already mastered various skills, and a list of projects with different skill requirements. Contributors can improve their skills by completing projects and can mentor each other to work is roles in which they couldn't succeed on their own. Your task is to assign contributors to project roles that fit their qualifications and maximize the score for completed projects.
 
-##Problem description
-###Contributors
+##P roblem description
+### Contributors
 There are N contributors. Each contributor has a name and one or more skills at a specific level (0,1,2,...). Not possessing a skill is equivalent to possessing a skill at level 0.
 
 ```markdown
@@ -24,9 +38,9 @@ Anna: Python level 3
 Bob: C++ level 3
 Maria: HTML level 4, CSS level 6
 ```
-![alt text](contributors.png)
+![alt text](blob/contributors.png)
 
-##Projects
+## Projects
 There are M projects. Each project is described by:
 
 * its name
@@ -45,9 +59,9 @@ Role 1 requiring HTML level 1
 Role 2 requiring CSS level 5
 ```
 
-![alt text](roles.png)
+![alt text](blob/roles.png)
 
-##Filling roles and mentorship
+## Filling roles and mentorship
 A contributor can be assigned to a project for a specific role (at most one role in a single project), if they either:
 
 * have the skill at the required level or higher; or
@@ -74,14 +88,14 @@ Role 2 (requires CSS level 5) is assigned to Maria (HTML level 4, CSS level 6)
 ☑️ Maria can mentor Bob on HTML since she has HTML level 4.
 ```
 
-##Assignments
+## Assignments
 Each contributor can start working on day 0 and can be working on at most one project at the same time. Once the work on a project starts, its contributors will be working on it the number of days equal to its duration and then become available to work on other projects.
 
 ```markdown
 For example, if the project WebServer has duration of 7 days and starts on day 0, the contributors assigned to it will be working on it during: day 0, day 1, day 2, day 3, day 4, day 5 and day 6. On day 7 the project is already completed. Contributors assigned to it can work on another project on day 7.
 ```
 
-##Learning
+## Learning
 Completing a project is a learning opportunity, especially for the contributors working on the edge of their existing abilities! When each project is completed:
 
 * contributors working in roles where the required skill level was equal or higher than their current level improve their skill level by one level
@@ -99,8 +113,8 @@ Bob improves HTML skill to level 1;
 Maria improves neither the CSS skill (because Maria’s CSS is already at a level higher than required) nor the HTML skill (because her role required CSS, not HTML).
 ```
 
-##Input data sets
-###Input Data
+## Input data sets
+### Input Data
 
 * A - An example
 * B - Better start small
@@ -109,7 +123,7 @@ Maria improves neither the CSS skill (because Maria’s CSS is already at a leve
 * E - Exceptional skills
 * F - Find great mentors
 
-##File format
+## File format
 Each input data set is provided in a plain text file. The file contains only ASCII characters with lines ending with a single '\n' character (also called “UNIX-style” line endings). When multiple strings and numbers are given in one line, they are separated by a single space between each two elements.
 
 The first line of the data set contains:
@@ -142,7 +156,7 @@ This is followed by P sections describing individual projects. Each project is d
     * a string Xk – the name of the skill (ASCII string of at most 20 characters, all of which are lowercase or uppercase English alphabet letters a-z and A-Z, numbers 0-9, dashes '-' or pluses '+'),
     * an integer Lk (1≤Lk≤100) – the required skill level.
 
-##Example
+## Example
 
 | Input file	| Description |
 | ----------- | ----------- |
@@ -163,13 +177,13 @@ This is followed by P sections describing individual projects. Each project is d
 | Python 3 |  first contributor needs to have Python at level ≥ 3 (2 with mentoring) |
 | HTML 3 |  second contributor needs to have HTML at level ≥ 3 (2 with mentoring) |
 
-![alt text](input_contributors.png)
-![alt text](input_projects.png)
+![alt text](blob/input_contributors.png)
+![alt text](blob/input_projects.png)
 
-##Submissions
+## Submissions
 The submission file should be a plaintext file containing only ASCII characters.
 
-##File format
+## File format
 Your submission describes which projects each contributor is going to work on and in which role.
 
 The first line should contain the integer E (0≤E≤P) – the number of executed projects.
@@ -179,7 +193,7 @@ This should be followed by E sections each describing one completed project. Eac
 * A single line containing the name of the project (as it appears in the input file). Each project can be mentioned at most once in the submission file.
 * A single line containing the names of the contributors assigned to each of the project roles, separated by single spaces and listed in the same order as the roles appear in the input file.
 
-##Example
+## Example
 
 | Submission file	| Description                          |
 | -------- |--------------------------------------|
@@ -191,10 +205,10 @@ This should be followed by E sections each describing one completed project. Eac
 | WebChat|assignments for project WebChat|
 | Maria Bob| Maria → first role, Bob → second role |
 
-##Scoring
+## Scoring
 Each contributor can only work on one project at a time. If one contributor is assigned to multiple projects, the contributor will work on them in the same order as they appear in the submission file. Each project starts immediately on the first day on which all the assigned contributors are available.
 
-![alt text](schedule.png)
+![alt text](blob/schedule.png)
 
 If some project assignment is invalid because the assigned contributor does not have the required skill level for the project after finishing all previously assigned projects, the submission is considered invalid and will not be scored.
 
